@@ -2,38 +2,26 @@
     min-height: 100%;
     height: 100%;
 }
-
 .playground {
-   /* width: 100%;
-    height: 100%;
-    min-height: 100%;*/
     background: #3e3e3e1f;
     display: block;
+    background-color: transparent;
 }
 
 .peg-bottom{
-    background: #4b00ff8c;
-   /* border-radius: 15px;*/
     text-align: center;
 }
-
 .pegs{
     text-align: center;
 }
-
 .pegs:hover{
-    
-}
 
+}
 .cursor-pointer{
     cursor: pointer;
 }
-.active{
-    background: aqua;
-}
-
 div.game-over-msg {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     background: #808080b0;
@@ -92,9 +80,6 @@ span.game-win-msg{
     text-align: -webkit-center;
     text-align: -moz-center;
     color: transparent;
-}
-.disk-1{
-   
 }
 .disk1{
     background: #0000FF;
@@ -177,3 +162,53 @@ span.game-win-msg{
     width: 90%;
 }
 /*Disk style*/
+.game-header{padding: 20px;text-align: center;margin-bottom: 60px;background-color: #04485e;color: white;}
+.btn-primary{ min-width: 120px;}
+.active{outline: 2px solid transparent;border-radius: 6px;box-shadow: 0px 5px 15px 5px #888888;}
+.padd-10-all{padding: 10px;}
+
+@media (max-width: 767px) {
+     span.game-over-msg,span.level-win-msg{font-size: 85px;}
+     span.game-win-msg{font-size: 45px;}
+    .no-disk,.top-disk{width: 3%;}
+    .disk div{height: 16px;}
+    .disk1{width: 30%;}
+    .disk2{width: 35%;}
+    .disk3{width: 40%;}
+    .disk4{width: 45%;}
+    .disk5{width: 50%;}
+    .disk6{width: 55%;}
+    .disk7{width: 60%;}
+    .disk8{width: 65%;}
+    .disk9{width: 70%;}
+    .disk10{width: 75%;}
+    .disk11{width: 80%;}
+    .disk12{width: 85%;}
+    .disk13{width: 90%;}
+    .disk14{width: 95%;}
+    .disk15{width: 100%;}
+    .disk16{width: 105%;}
+}
+@media (max-width: 575px) {
+     span.game-over-msg,span.level-win-msg{font-size: 75px;}
+     span.game-win-msg{font-size: 35px;}
+    .disk{padding-left: 5px; padding-right: 5px;}
+    .no-disk,.top-disk{width: 3%;}
+    .disk div{height: 12px;}
+    .disk1{width: 35%;}
+    .disk2{width: 40%;}
+    .disk3{width: 45%;}
+    .disk4{width: 50%;}
+    .disk5{width: 55%;}
+    .disk6{width: 60%;}
+    .disk7{width: 65%;}
+    .disk8{width: 70%;}
+    .disk9{width: 75%;}
+    .disk10{width: 80%;}
+    .disk11{width: 85%;}
+    .disk12{width: 90%;}
+    .disk13{width: 95%;}
+    .disk14{width: 100%;}
+    .disk15{width: 105%;}
+    .disk16{width: 107%;}
+}
