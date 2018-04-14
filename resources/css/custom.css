@@ -1,4 +1,7 @@
-.fill { 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+.fill {
     min-height: 100%;
     height: 100%;
 }
@@ -7,15 +10,15 @@
     display: block;
     background-color: transparent;
 }
-
 .peg-bottom{
     text-align: center;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    color: white;
+    background-color: cornflowerblue;
 }
 .pegs{
     text-align: center;
-}
-.pegs:hover{
-
 }
 .cursor-pointer{
     cursor: pointer;
@@ -25,47 +28,41 @@ div.game-over-msg {
     top: 0;
     left: 0;
     background: #808080b0;
-    height: 100%; 
+    height: auto;
     width: 100%;
 }
-
 .content-center{
     text-align: center;
 }
 span.game-over-msg{
     color: red;
-    font-size: 156px;
+    font-size: 100px;
     opacity: 1;
     text-align: center;
     text-shadow: 7px -1px #ce1f1f;
 }
-
 span.level-win-msg{
     color: green;
-    font-size: 156px;
+    font-size: 100px;
     opacity: 1;
     text-align: center;
     text-shadow: 7px -1px #0e5a0ed1;
 }
-
 span.game-win-msg{
     color: green;
-    font-size: 115px;
+    font-size: 60px;
     opacity: 1;
     text-align: center;
     text-shadow: 7px -1px #0e5a0ed1;
 }
-
 .full-screen{
     height: 100%;
     width: 100%;
 }
-
 @font-face{
     font-family:'Amarante';
     src:url('resources/css/fonts/Amarante-Regular.ttf')
 }
-
 /*Disk style*/
 .top-disk{
     background: black;
@@ -166,10 +163,12 @@ span.game-win-msg{
 .btn-primary{ min-width: 120px;}
 .active{outline: 2px solid transparent;border-radius: 6px;box-shadow: 0px 5px 15px 5px #888888;}
 .padd-10-all{padding: 10px;}
+.marg-0-all{margin: 0px;}
+.marg-t-40-all{margin-top: 40px;}
 
 @media (max-width: 767px) {
      span.game-over-msg,span.level-win-msg{font-size: 85px;}
-     span.game-win-msg{font-size: 45px;}
+     span.game-win-msg{font-size: 45px !important;}
     .no-disk,.top-disk{width: 3%;}
     .disk div{height: 16px;}
     .disk1{width: 30%;}
@@ -191,8 +190,9 @@ span.game-win-msg{
 }
 @media (max-width: 575px) {
      span.game-over-msg,span.level-win-msg{font-size: 75px;}
-     span.game-win-msg{font-size: 35px;}
+     span.game-win-msg{font-size: 35px !important;}
     .disk{padding-left: 5px; padding-right: 5px;}
+    .padd-b-15-mob-only{padding-bottom: 15px;}
     .no-disk,.top-disk{width: 3%;}
     .disk div{height: 12px;}
     .disk1{width: 35%;}

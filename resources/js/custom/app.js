@@ -18,7 +18,6 @@
         $scope.changeLevel=function(){
             $scope.level=$scope.level+1;
             var diskNum=$scope.level+2;
-            console.log(diskNum)
             $scope.peg.A=angular.copy($scope.templatePeg);
             $scope.peg.B=angular.copy($scope.templatePeg);
             $scope.peg.C=angular.copy($scope.templatePeg);
@@ -59,7 +58,6 @@
         }
         
         $scope.moveDisk=function(){
-            console.log('From Peg:'+$scope.source+" to Peg:"+$scope.destination);
             //Modify source peg
             var diskToMove=-1;
             for(var i=$scope.peg[$scope.source].length;i>1;i--){
@@ -100,7 +98,9 @@
         $scope.showCredit=function(){
             $scope.gameStatus='CREDIT';
         }
-        
+        $scope.help=function(){
+            $scope.gameStatus='HELP';
+        }
         $scope.gotoHome=function(){
             $scope.gameStatus='START';
         }

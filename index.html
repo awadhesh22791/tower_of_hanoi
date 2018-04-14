@@ -12,17 +12,11 @@
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-
           gtag('config', 'UA-93355643-1');
         </script>
         <link rel="stylesheet" href="resources/lib/bootstrap/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="resources/css/custom.css"/>
         <link rel="stylesheet" href="resources/lib/font-awesome.min.css"/>
-        <style>
-            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-              display: none !important;
-            }
-        </style>
         <script type="text/javascript" src="resources/lib/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="resources/lib/angular.min.js"></script>
         <script type="text/javascript" src="resources/lib/bootstrap/js/bootstrap.min.js"></script>
@@ -34,16 +28,33 @@
                 </div>
                 <div class="col-lg-12" ng-show="gameStatus=='START'">
                     <div class="row">
-                        <div class="d-inline-block text-right col-lg-6 col-md-6 col-sm-6 col-6">
+                        <div class="d-inline-block padd-b-15-mob-only text-lg-right text-md-right text-sm-right text-center text-right col-lg-4 col-md-4 col-sm-4 col-12">
                             <button type="button" class="btn btn-primary" ng-click="startGame()">New Game</button>
                         </div>
-                        <div class="d-inline-block col-lg-6 col-md-6 col-sm-6 col-6">
+                        <div class="d-inline-block padd-b-15-mob-only text-center col-lg-4 col-md-4 col-sm-4 col-12">
                             <button type="button" class="btn btn-primary" ng-click="showCredit()">Credits</button>
+                        </div>
+                        <div class="d-inline-block padd-b-15-mob-only text-lg-left text-md-left text-sm-left text-center col-lg-4 col-md-4 col-sm-4 col-12">
+                            <button type="button" class="btn btn-primary" ng-click="help()">Help</button>
                         </div>
                     </div>
                 </div>
             <div class="col-lg-12" ng-show="gameStatus=='CREDIT'" ng-click='gotoHome()'>
                 <input type="text" id="name" name="name" class="form-control" placeholder="Enter Your Name">
+            </div>
+            <div class="col-lg-12" ng-show="gameStatus=='HELP'" ng-click='gotoHome()'>
+                <div class="card">
+                    <div class="card-header">
+                        Help
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Important Point for the Game</h5>
+                        <p class="card-text">1. Goal of the game is to transfer disks from Peg-A to Peg-C.</p>
+                        <p class="card-text">2. Maintain order in ascending order during movement.</p>
+                        <p class="card-text">3. At any step if order of disk is incorrect then Game will over and game start from level 1.</p>
+                        <button class="btn btn-primary" ng-click="gameStatus='START'">Back</button>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-12" ng-show="gameStatus=='GO'">
                 <div class="col-lg-12">
@@ -73,25 +84,25 @@
                 </div>
             </div>
             </div>
-            <div class='row game-over-msg' ng-show="gameStatus=='GAME OVER'">
+            <div class='row game-over-msg marg-0-all' ng-show="gameStatus=='GAME OVER'">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-center">
                     <span class='game-over-msg'>Game Over</span>
                 </div>  
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-center">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-center marg-t-40-all">
                     <button class="btn btn-primary" ng-click="restartGame()">Restart</button>
                 </div> 
             </div>
-            <div class='row game-over-msg' ng-show="gameStatus=='WIN'">
+            <div class='row game-over-msg marg-0-all' ng-show="gameStatus=='WIN'">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-center" ng-show='level!=maxLevel'>
                     <span class='level-win-msg'>Level Win</span>
                 </div>  
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-center" ng-show='level!=maxLevel'>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-center marg-t-40-all" ng-show='level!=maxLevel'>
                     <button class="btn btn-primary" ng-click="playNextLevel()">Play Next Level</button>
                 </div> 
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-center" ng-show='level==maxLevel'>
                     <span class='game-win-msg'>Congratulations!<br/>You are winner of the game.</span>
                 </div>  
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-center" ng-show='level==maxLevel'>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-center marg-t-40-all" ng-show='level==maxLevel'>
                     <button class="btn btn-primary" ng-click="restartGame()">Restart</button>
                 </div> 
             </div>
